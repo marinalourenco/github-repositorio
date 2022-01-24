@@ -7,12 +7,12 @@ export const Container = styled.div`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background: #571089;
+    background: #571089 repeat;
 `;
 
 export const SearchSection = styled.section`
     background: #fff;
-    height: 200px;
+    height: 12.5rem;
     width: 80%;
     margin-top: 1rem;
     border-radius: 1rem;
@@ -28,25 +28,48 @@ export const SearchSection = styled.section`
 `;
 
 export const UserSection = styled(SearchSection)`
-    height: 400px;
+    height: 12.5rem;
     justify-content: flex-start;
     flex-direction: row;
 `;
 
 export const RepositorySection = styled.div`
+    margin: 0 auto;
+    margin-top: 1rem;
     background: transparent;
+    display: grid;
+    justify-content: center;
+    width: 80%;
+    height: 6.25rem;
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 0.9375rem;
+    
+    @media(min-width: 900px) {
+        grid-template-columns: repeat(2, auto)
+    };
+    @media(min-width: 1200px) {
+        grid-template-columns: repeat(3, auto)
+    };
 `;
 
-export const LoadingSection = styled(SearchSection)`
-    height: 60%;
+export const RepositoryBox = styled.button`
+    background: #fff;
+    height: 6.25rem;
+    width: 25rem;
+    margin-bottom: 0.625rem;
+    border-radius: 1rem;
+    display: flex;
     flex-direction: column;
-    justifiy-content: space-around;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    color: #571089;
 `;
+
 
 export const InitialSection = styled(SearchSection)`
     height: 60%;
     flex-direction: column;
-    justifiy-content: space-around;
 `;
 
 export const UserDescriptionBox = styled.div`
@@ -56,18 +79,18 @@ export const UserDescriptionBox = styled.div`
 `
 
 export const Button = styled.button`
-width: 200px;
-height: 40px;
-background: #e02041;
+width: 6.25rem;
+height: 2.5rem;
+background: #73678a;
 border: 0;
-border-radius: 8px;
+border-radius: 0.5rem;
 color: #fff;
 font-weight: 700;
 display: inline-block;
 text-align: center;
 align-items: center;
 text-decoration: none;
-font-size: 18px;
+font-size: 0.875rem;
 line-height: 40px;
 transition: filter 0.2s;
     &:hover {
@@ -77,9 +100,9 @@ transition: filter 0.2s;
 
 export const Input = styled.input`
     width: 100%;
-    height: 40px;
-    color: #333;
-    border: 1px solid #dcdce6;
+    height: 2.5rem;
+    color: #73678a;
+    border: 1px solid #73678a;
     border-radius: 8px;
     padding: 0 24px;
     margin-right: 1rem;

@@ -19,16 +19,20 @@ export const useGithubInfo = () => {
     
     //funções
     async function getData() {
-        setLoading(true)
+        try {
+          setLoading(true)
         const users = await github.get(
-          `/${login}`,
+          `users/${login}`,
         );
         setUser(users.data);
-        const respos = await github.get(
-          `/${login}/repos`,
+        const repos = await github.get(
+          `users/${login}/repos`,
         );
-        setRepositories(respos.data);
+        setRepositories(repos.data);
         setLoading(false)
+        } catch (error) {
+          setLoading(false)
+        }
     }
     
 

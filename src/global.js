@@ -44,8 +44,9 @@ export default createGlobalStyle`
   }
   
   body {
-    font: 16px "Montserrat-Normal", Arial, sans-serif;
-    color: #571089;
+    font: 1rem "Montserrat-Normal", Arial, sans-serif;
+    background: #571089;
+    color: #73678a;
   }
   
   input, textarea {
