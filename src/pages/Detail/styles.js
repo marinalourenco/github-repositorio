@@ -17,25 +17,33 @@ export const DetailSection = styled.section`
     margin-top: 1rem;
     border-radius: 1rem;
     border: 1px solid #ccc;
-    padding: 0 2rem;
+    padding: 0 3rem;
     display: flex;
     flex-direction: column;
     position: relative;
-
+    
     filter: drop-shadow(0px 24px 64px rgba(0, 0, 0, 0.06));
 `;
 
-export const DetailBox = styled.div`
+export const DetailArea = styled.div`
     margin-top: 1rem;
     height: 3.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    border: 1px solid black;
+    justify-content: space-between;
+`
+
+export const DetailBox = styled.div`
+    height: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 `
 export const DetailInfo = styled.div`
     margin-left: 10px;
+    
 `
 
 export const DetailTitle = styled.h1`

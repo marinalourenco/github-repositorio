@@ -16,14 +16,15 @@ function Detail() {
         ):(
             repositorio.id?(
                 <S.DetailSection>
-                  <S.DetailBox>
+                  <S.DetailArea>
+                    <S.DetailBox>
                     <S.Avatar src={repositorio.owner.avatar_url}/>
                     <S.DetailInfo>
                       <S.DetailTitle>{repositorio.name}</S.DetailTitle>
                       <S.DetailAuthor>{repositorio.owner.login}</S.DetailAuthor>
                     </S.DetailInfo>
-                  </S.DetailBox>
-                  <S.LanguagesBox>
+                    </S.DetailBox>
+                    <S.LanguagesBox>
                     <S.LanguagesTitle>Linguagens:</S.LanguagesTitle>
                     <div>
                     {languages.map((content) => (
@@ -33,6 +34,8 @@ function Detail() {
                     ))}
                     </div>
                   </S.LanguagesBox>
+                  </S.DetailArea>
+                 
                 </S.DetailSection>
             ):(
             <div>nao existe</div>
