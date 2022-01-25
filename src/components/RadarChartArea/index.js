@@ -13,7 +13,7 @@ function RadarChartArea({data}) {
   
   return (
     <ResponsiveContainer>
-          <RadarChart outerRadius={1000} data={data}>
+          <RadarChart outerRadius={100} data={data}>
             <PolarGrid />
             <PolarAngleAxis dataKey="name" stroke="#571089" />
             <PolarRadiusAxis />
