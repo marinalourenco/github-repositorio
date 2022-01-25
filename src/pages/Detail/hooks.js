@@ -3,13 +3,14 @@ import { useState, useEffect } from "react"
 
 export const useGithubrepos = (user, repos) => {
     const [repositorio, setRepositorio] = useState({})
-    const [languages, setLanguages] = useState({})
+    const [languages, setLanguages] = useState([])
     const [loading, setLoading] = useState(false)
-
+    const [error, setError] = useState(false)
     
     async function getData(){
         try {
             setLoading(true)
+            setError(false)
             const rep = await github.get(
             `repos/${user}/${repos}`,
             );
@@ -17,10 +18,14 @@ export const useGithubrepos = (user, repos) => {
             const lang = await github.get(
             `repos/${user}/${repos}/languages`,
             );
-            setLanguages(lang.data);
+            const langArray = Object.entries(lang.data).map(([name, value]) => {
+                return { name, value };
+            });
+            setLanguages(langArray);
             setLoading(false)
         } catch (error) {
             setLoading(false)
+            setError(true)
         }
         
     }
@@ -31,5 +36,5 @@ export const useGithubrepos = (user, repos) => {
     }
     },[user,repos]) 
 
-    return{repositorio,languages,loading}
+    return{repositorio,languages,loading, error}
 }

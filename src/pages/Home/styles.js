@@ -52,26 +52,6 @@ export const RepositorySection = styled.div`
     };
 `;
 
-export const RepositoryBox = styled.button`
-    background: #fff;
-    height: 6.25rem;
-    width: 25rem;
-    margin-bottom: 0.625rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    color: #571089;
-`;
-
-
-export const InitialSection = styled(SearchSection)`
-    height: 60%;
-    flex-direction: column;
-`;
-
 export const UserDescriptionBox = styled.div`
     display: flex;
     flex-direction: column;

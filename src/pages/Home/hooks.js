@@ -5,6 +5,7 @@ export const useGithubInfo = () => {
     // estados da aplicação
     const [login, setSearchLogin] = useState("")
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
     const [user, setUser] = useState({
         id: 0,
         login: '',
@@ -21,6 +22,7 @@ export const useGithubInfo = () => {
     async function getData() {
         try {
           setLoading(true)
+          setError(false)
         const users = await github.get(
           `users/${login}`,
         );
@@ -32,6 +34,7 @@ export const useGithubInfo = () => {
         setLoading(false)
         } catch (error) {
           setLoading(false)
+          setError(true)
         }
     }
     
@@ -43,5 +46,5 @@ export const useGithubInfo = () => {
       }
     },[login])
 
-    return {user, repositories, setSearchLogin, loading}
+    return {user, repositories, setSearchLogin, loading, error}
 }
