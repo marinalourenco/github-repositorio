@@ -18,6 +18,7 @@ export const DetailSection = styled.section`
     border-radius: 1rem;
     border: 1px solid #ccc;
     padding: 0 3rem;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -84,4 +85,29 @@ export const LanguagesText = styled.h3`
 export const LanguagesTitle = styled.h2`
   font-size: 16px;
   margin: 5px auto;
+`;
+
+export const DashboardBox = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const RadarChartContainer = styled.div`
+  align-items: center;
+  height: 300px;
+  justify-content: center;
+  padding-top: 10px;
+  width: 500px;
+  @media (max-width: 768px) {
+    height: 400px;
+    width: 400px;
+    margin-top: 10px;
+  }
 `;

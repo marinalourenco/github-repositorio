@@ -4,6 +4,7 @@ import Loading from '../../components/Loading';
 import { useGithubrepos } from './hooks';
 import {FaGithubAlt} from "react-icons/fa"
 import * as S from './styles'
+import RadarChartArea from '../../components/RadarChartArea';
 
 function Detail() {
   const { repos_author, repos_name } = useParams()
@@ -35,7 +36,11 @@ function Detail() {
                     </div>
                   </S.LanguagesBox>
                   </S.DetailArea>
-                 
+                  <S.DashboardBox>
+                      <S.RadarChartContainer>
+                        <RadarChartArea data={languages}/>
+                      </S.RadarChartContainer>
+                  </S.DashboardBox>
                 </S.DetailSection>
             ):(
             <div>nao existe</div>
